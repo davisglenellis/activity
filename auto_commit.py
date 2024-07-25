@@ -4,7 +4,6 @@ import subprocess
 from datetime import datetime
 from random import random
 
-
 # This runs commands in the command line
 def run_command(command):
     result = subprocess.run(command, capture_output=True, text=True, shell=True)
@@ -21,18 +20,17 @@ def commit_and_push_changes():
     os.chdir(activity_dir)
 
     # Define the commit message with the current date
-    commit_message = f"Automated commit on {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+    commit_message = f"Automated commit on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
     # Commit and push changes
     subprocess.run(["git", "add", "."], check=True)
     subprocess.run(["git", "commit", "-m", commit_message], check=True)
     subprocess.run(["git", "push"], check=True)
 
-
 # I only want to push around 3 times a day, and add some randomness so it seems more natural
 def sometimes_this_triggers_commit_and_push():
     if random() < 0.99:
-        commit_and_push_changes
+        commit_and_push_changes()
         print('worked!')
 
 if __name__ == "__main__":
