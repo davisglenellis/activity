@@ -3,6 +3,7 @@ import os
 import subprocess
 from datetime import datetime
 from random import random
+import logging
 
 # This runs commands in the command line
 def run_command(command):
@@ -17,7 +18,10 @@ def commit_and_push_changes():
     activity_dir = "/Users/davisglenellis/activity"
 
     # Change to the activity directory
-    os.chdir(activity_dir)
+    try:
+        os.chdir(activity_dir)
+    except Exception as e:
+        logging.error(f"Error changing directory: {e}")
 
     # Define the commit message with the current date
     commit_message = f"Automated commit on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
