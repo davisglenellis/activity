@@ -29,7 +29,6 @@ def commit_and_push_changes():
     # Commit and push changes
     subprocess.run(["git", "add", "."], check=True)
     subprocess.run(["git", "commit", "-m", commit_message], check=True)
-    subprocess.run(["git", "push"], check=True)
 
 # I only want to push around 3 times a day, and add some randomness so it seems more natural
 def sometimes_this_triggers_commit_and_push():
