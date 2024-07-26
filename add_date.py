@@ -8,7 +8,7 @@ import datetime
 # Right now, adds the current date. In the future, I may call a LLM API to generate real code.
 def update_file(filename='/Users/davisglenellis/activity/auto_commit.txt'):
     with open(filename, 'a') as file:
-        file.write(str(datetime.date.today()) + '\n')
+        file.write(str(datetime.date.now()) + '\n')
 
 if __name__ == "__main__":
     update_file()
