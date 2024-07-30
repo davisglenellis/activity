@@ -9,7 +9,7 @@ def update_file(filename='/Users/davisglenellis/activity/auto_commit.txt'):
         file.write(str(datetime.now()) + '\n')
 
 def sometimes_update_file():
-    if random() < 0.04:
+    if random() < 0.08:
         update_file()
         print('worked!')
 

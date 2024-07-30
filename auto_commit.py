@@ -32,7 +32,7 @@ def commit_and_push_changes():
 
 # I only want to push around 3 times a day, and add some randomness so it seems more natural
 def sometimes_this_triggers_commit_and_push():
-    if random() < 0.01:
+    if random() < 0.03:
         commit_and_push_changes()
         print('worked!')
 
